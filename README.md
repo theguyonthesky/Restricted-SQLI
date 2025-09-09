@@ -42,8 +42,8 @@ Linux (Kali) – Typical environment for running hash-cracking tools.
 1. Clone or download this repository
 2. Install the libraries: pip install requests.
 3. Run the script using one of the following methods:
-   - Terminal (macOS/Linux): 'python3 blind-sql-injection.py'
-   - Windows (or IDEs like VS Code, PyCharm): 'python blind-sql-injection.py' or use the Run button
+   - Terminal (macOS/Linux): 'python3 restricted-sql-injection.py'
+   - Windows (or IDEs like VS Code, PyCharm): 'python restricted-sql-injection.py' or use the Run button
 
 # Disclaimer
 This project is created for research, ethical hacking, and educational purposes only. Unauthorized access to computer systems is illegal. Always ensure you have explicit permission before testing any systems. The developer is not responsible for any misuse of this code.
