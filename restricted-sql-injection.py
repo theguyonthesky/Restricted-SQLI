@@ -54,26 +54,35 @@ def extract_hash(charset, user_id, password_length):
 				found += charset[j]
 				break
 	return found
-
+	
+#Extract the password hash using binary search
 def extract_hash_bst(charset, user_id, password_length):
-	found = ""
+	found = "" #This will store the extracted password hash
+	
+	#Loop through each character position in the password hash
 	for index in range(0, password_length):
-		start = 0
-		end = len(charset) - 1
+		start = 0 #Start of the charset
+		end = len(charset) - 1 #End of the charset
+
+		#Perform binary search to find the correct character at the current position
 		while start <= end:
+			#If the search space is reduced to two characters
 			if end - start == 1:
+				#If the first character in the range matches, add it to the found password
 				if start == 0 and boolean_query(index, user_id, charset[start]):
 					found += charset[start]
 				else:
-					found += charset[start + 1]
+					found += charset[start + 1] #Otherwise, add the second character
 				break
 			else:
+				#Find the middle character in the search range
 				middle = (start + end) // 2
+				#Perform the boolean query to check if the middle character matches the password
 				if boolean_query(index, user_id, charset[middle])
-					end = middle
+					end = middle #If the middle character matches, narrow the search to the lower half
 				else:
-					start = middle
-	return found
+					start = middle #If the middle character doesn't match, narrow the search to the upper half
+	return found #Return the extracted password hash
 
 def total_queries_taken():
 	global total_queries
