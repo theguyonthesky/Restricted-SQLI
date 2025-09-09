@@ -78,7 +78,7 @@ def extract_hash_bst(charset, user_id, password_length):
 				#Find the middle character in the search range
 				middle = (start + end) // 2
 				#Perform the boolean query to check if the middle character matches the password
-				if boolean_query(index, user_id, charset[middle])
+				if boolean_query(index, user_id, charset[middle]):
 					end = middle #If the middle character matches, narrow the search to the lower half
 				else:
 					start = middle #If the middle character doesn't match, narrow the search to the upper half
